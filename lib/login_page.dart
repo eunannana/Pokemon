@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokemon/home_page.dart';
+import 'package:pokemon/register_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -12,8 +13,6 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _passwordController = TextEditingController();
   bool _passwordVisible= false;
   String _errorMessage = '';
-
-
 
   // void _validateInputs() {
   //   if (_usernameController.text == "anns" && _passwordController.text == "123") {
@@ -60,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
                     const Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        'Name',
+                        "Name",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.blue
@@ -76,11 +75,11 @@ class _LoginPageState extends State<LoginPage> {
                           )
                         ),
                         prefixIcon: Icon(Icons.person, color: Colors.blue),
-                        labelText: 'Enter your name',
+                        labelText: "Enter your name",
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter your username';
+                          return "Please enter your username";
                         }
                         return null;
                       },
@@ -89,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                     const Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
-                        'Password',
+                        "Password",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.blue
@@ -105,7 +104,7 @@ class _LoginPageState extends State<LoginPage> {
                           )
                         ),
                         prefixIcon: const Icon(Icons.lock, color: Colors.blue),
-                        labelText: 'Enter your name password',
+                        labelText: "Enter your name password",
                         suffixIcon: IconButton(
                           icon: Icon(
                             _passwordVisible
@@ -122,7 +121,7 @@ class _LoginPageState extends State<LoginPage> {
                       obscureText: !_passwordVisible,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter your password';
+                          return "Please enter your password";
                         }
                         return null;
                       },
@@ -173,7 +172,10 @@ class _LoginPageState extends State<LoginPage> {
     const Text("Don't have an account?"),
     TextButton(
       onPressed: () {
-        // Navigate to register page
+        Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => RegisterPage()),
+                );
       },
       child: const Text("Sign up", style: TextStyle(
           color: Color.fromARGB(255, 230, 201, 18),

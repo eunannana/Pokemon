@@ -9,7 +9,7 @@ String? name;
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text("Hi, $name"),
+        child: Text("Hallo, $name"),
       ),
     );
   }
