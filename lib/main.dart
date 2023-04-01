@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: OnBoardingPage(),
+      home: const OnboardingPage(),
     );
   }
 }

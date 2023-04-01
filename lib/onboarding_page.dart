@@ -1,49 +1,58 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:pokemon/src/constants/colors.dart';
-import 'package:pokemon/src/constants/image_string.dart';
-import 'package:pokemon/src/constants/sizes.dart';
-import 'package:pokemon/src/constants/text_string.dart';
 
-class OnBoardingPage extends StatelessWidget {
-  const OnBoardingPage({Key? key}) : super(key: key);
+class OnboardingPage extends StatelessWidget {
+  const OnboardingPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-   var mediaQuery = MediaQuery.of(context);
-    var height = mediaQuery.size.height;
-    var brightness = mediaQuery.platformBrightness;
-    final isDarkMode = brightness == Brightness.dark;
-
     return Scaffold(
-      backgroundColor: tWhiteColor,
-      body: Container(
-        padding: const EdgeInsets.all(tDefaultSize),
+      body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(tOnBoardingTitle, style: TextStyle(color: Color.fromARGB(255, 209, 209, 6),)),
-                Text(tOnBoardingSubTitle,
-                    style: Theme.of(context).textTheme.bodyText1,
-                    textAlign: TextAlign.center),
-            Image(image: const AssetImage(tBoardingImage), height: height * 0.2),
-            Column(
-              // children: [
-                
-              // ],
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: IconButton(
-                    onPressed: () {},
-                  icon: Icon(Icons.navigate_next_outlined),
-                  ),
+            const Padding(
+              padding: EdgeInsets.all(100.0),
+              child: Text(
+                'Pokedex.',
+                style: TextStyle(
+                  color: Color.fromARGB(255, 222, 202, 86),
+                  fontSize: 35.0,
+                  fontWeight: FontWeight.bold,
                 ),
-                const SizedBox(width: 1.0),
-              ],
-            )
+              ),
+            ),
+            
+            const Padding(
+              padding: EdgeInsets.all(5.0),
+              child: Text(
+                'Welcome to Pokedex \n You can find your favorite pokemon here', textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Color.fromARGB(255, 19, 18, 18),
+                  fontSize: 20.0,
+                ),
+              ),
+            ),
+            Image.asset(
+              'assets/images/pokeball.png',
+              width: 250.0,
+            ),
+            Expanded(child: Align(
+
+  alignment: Alignment.bottomCenter,
+  child: ElevatedButton(
+              onPressed: () {
+                // Navigate to next page
+              },
+              style: ElevatedButton.styleFrom(
+    shape: const CircleBorder(),
+    primary: const Color.fromARGB(255, 205, 180, 99), 
+    padding: const EdgeInsets.all(20), 
+  ),
+  child: const Icon(Icons.arrow_forward, size: 35),
+  
+            ),),),
+          const SizedBox(height: 50),
           ],
         ),
       ),
