@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokemon/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -139,8 +140,8 @@ class _LoginPageState extends State<LoginPage> {
                         if (_formKey.currentState!.validate()) {
                           String username = _usernameController.text;
                           String password = _passwordController.text;
-                          if (username == "anns321" && password == "321anns") {
-                            Navigator.pushNamed(context, "/home");
+                          if (username == "Anns" && password == "Anns123") {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage(name: username),));
                           } else {
                             setState(() {
                               _errorMessage =
