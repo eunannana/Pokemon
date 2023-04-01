@@ -8,18 +8,18 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Row(
+        body: Column(crossAxisAlignment: CrossAxisAlignment.start, 
         children: [
-          Padding(
-            padding: EdgeInsets.only(top: 70, right: 70, left: 10),
-            child: Text(
-              "Hallo, $name",
-              style: TextStyle(fontSize: 24),
-            ),
+      Row(
+        children:<Widget> [
+          Row(
+            children: <Widget>[
+            Text("Hello, ", style: TextStyle(fontSize: 24, color: Colors.black),),
+            Text("$name", style: TextStyle(fontSize: 24, color: Color.fromARGB(255, 24, 139, 193)),)
+          ],
           ),
           Padding(
-            padding: EdgeInsets.only(top: 70, left: 90),
+            padding: EdgeInsets.only(top: 70, left: 170),
             child: CircleAvatar(
               radius: 40,
               backgroundImage: NetworkImage(
