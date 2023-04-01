@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pokemon/login_page.dart';
 
 class OnboardingPage extends StatelessWidget {
   const OnboardingPage({Key? key}) : super(key: key);
@@ -42,7 +43,10 @@ class OnboardingPage extends StatelessWidget {
   alignment: Alignment.bottomCenter,
   child: ElevatedButton(
               onPressed: () {
-                // Navigate to next page
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
               },
               style: ElevatedButton.styleFrom(
     shape: const CircleBorder(),
