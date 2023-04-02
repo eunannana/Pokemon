@@ -33,16 +33,15 @@ class HomePage extends StatelessWidget {
                   ),
                   const Spacer(),
                   Container(
-                    width: 50,
-                    height: 50,
+                    width: 60,
+                    height: 60,
                     decoration: const BoxDecoration(
-                      color: Colors.blue,
                       shape: BoxShape.circle,),
                     child: ClipOval(
                       child: Image.network(
                         'https://sumgyeojingem.com/wp-content/uploads/2016/06/13346749_1171300776235959_2367834133049962414_n.jpg',
-                        height: 50,
-                        width: 50,
+                        height: 60,
+                        width: 60,
                         fit: BoxFit.cover,
                       ),
                     ),
